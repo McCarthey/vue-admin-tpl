@@ -2,11 +2,13 @@
   <div class="main">
     <el-container>
       <el-aside width="auto">
+        <!-- 展开/收起按钮 -->
         <div class="ani-icon" :class="aniIcon" @click="toggleCollapse">
           <div></div>
           <div></div>
           <div></div>
         </div>
+        <!-- 侧边导航 -->
         <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
           <el-submenu index="1">
             <template slot="title">
@@ -40,10 +42,10 @@
           </el-menu-item>
         </el-menu>
       </el-aside>
+
       <el-container>
         <el-header>Header</el-header>
         <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
       </el-container>
     </el-container>
   </div>
