@@ -61,19 +61,31 @@
     data() {
       return {
         isCollapse: true,
-        aniIcon:'ani-icon-f1',
+        aniIcon:'ani-icon-white',
         collapseText:'toggle',
       };
     },
     methods: {
       toggleCollapse(){
         this.isCollapse = !this.isCollapse;
+        //变形动画
+        // switch (this.aniIcon) {
+        //   case 'ani-icon-f1':
+        //     this.aniIcon = 'ani-icon-f2';
+        //     break;
+        //   case 'ani-icon-f2':
+        //     this.aniIcon = 'ani-icon-f1';
+        //     break;
+        //   default:
+        //     break;
+        // }
+        //过渡动画
         switch (this.aniIcon) {
-          case 'ani-icon-f1':
-            this.aniIcon = 'ani-icon-f2';
+          case 'ani-icon-white':
+            this.aniIcon = 'ani-icon-blue';
             break;
-          case 'ani-icon-f2':
-            this.aniIcon = 'ani-icon-f1';
+          case 'ani-icon-blue':
+            this.aniIcon = 'ani-icon-white';
             break;
           default:
             break;
