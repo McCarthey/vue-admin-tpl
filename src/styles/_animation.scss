@@ -1,0 +1,43 @@
+.ani-icon {
+  height: 40px;
+  background-color: #409EFF;
+  padding: 10px 0;
+  div {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+}
+.ani-icon-f1 {
+  div {
+    margin: 7px 10px;
+  }
+}
+.ani-icon-f2 {
+  div:nth-child(1) {
+    animation: changeIcon .3s forwards;
+  }
+  div:nth-child(2) {
+    animation: changeIconReverse .3s forwards;
+  }
+  div:nth-child(3) {
+    display: none;
+  }
+}
+@keyframes changeIcon {
+  from { 
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes changeIconReverse {
+  from { 
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
