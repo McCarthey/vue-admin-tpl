@@ -46,7 +46,9 @@
       <el-container>
         <!-- 头部 -->
         <el-header>
-          
+          <section class="profile-section">
+            <Profile></Profile>
+          </section>
         </el-header>
         <el-main>Main</el-main>
       </el-container>
@@ -62,10 +64,13 @@
 </style>
 
 <script>
+  import Profile from '@/components/Profile' 
   export default {
+    name:"index",
+    components:{ Profile },
     data() {
       return {
-        isCollapse: true,
+        isCollapse: false,
         aniIcon:'ani-icon-white',
         collapseText:'toggle',
       };
@@ -73,17 +78,6 @@
     methods: {
       toggleCollapse(){
         this.isCollapse = !this.isCollapse;
-        //变形动画
-        // switch (this.aniIcon) {
-        //   case 'ani-icon-f1':
-        //     this.aniIcon = 'ani-icon-f2';
-        //     break;
-        //   case 'ani-icon-f2':
-        //     this.aniIcon = 'ani-icon-f1';
-        //     break;
-        //   default:
-        //     break;
-        // }
         //过渡动画
         switch (this.aniIcon) {
           case 'ani-icon-white':
