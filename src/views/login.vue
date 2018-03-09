@@ -11,6 +11,7 @@
       <div class="input-wrapper">
         <el-input
           placeholder="密码"
+          type="password"
           v-model="password">
         </el-input>
       </div>
@@ -22,6 +23,11 @@
 </template>
 
 <script>
+//mockjs登录接口
+import { API_LOGIN } from '@/mock/api.js'
+//设置token
+import { setToken } from '@/utils/token.js'
+
 export default {
   name:'login',
   data(){
@@ -35,7 +41,24 @@ export default {
   methods:{
     login(){
       this.loading = true;
-      this.btnText = '登录中'
+      this.btnText = '登录中';
+      this.$ajax({
+        url:'/api/login',
+        method:'post',
+        data:{
+          loginname:this.loginname,
+          password:this.password
+        }
+      })
+      .then(res=>{
+        console.log(res); 
+        let {code,msg,token} = res.data;
+        if (code === 200) {
+          this.$message({type:'success',message:'登录成功'})
+          setToken(token)
+          this.$router.push({name:'Index'})
+        }
+      })
     }
   }
 }

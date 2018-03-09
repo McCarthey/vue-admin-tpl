@@ -16,6 +16,9 @@
 </template>
 
 <script>
+  //mockjs登出接口
+  import { API_LOGOUT } from '@/mock/api.js'
+  import { getToken } from '@/utils/token.js'
   import Avatar from '@/components/Avatar'
   export default {
     name:'profile',
@@ -28,7 +31,21 @@
     },
     methods:{
       logout(){
-
+        this.$ajax({
+          url:'/api/logout',
+          method:'post',
+          headers:{
+            token:getToken()
+          }
+        })
+        .then(res=>{
+          console.log(res);
+          let {code,msg} = res.data;
+          if (code === 200) {
+            this.$message({type:'success',message:'退出成功'})
+            this.$router.push({name:'Login'})
+          }
+        })
       }
     }
   }
