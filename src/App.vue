@@ -11,6 +11,10 @@ export default {
 </script>
 
 <style lang="scss">
+#app {
+  width: 100vw;
+  height: 100vh;
+}
 @import './styles/style.scss';
 </style>
 
