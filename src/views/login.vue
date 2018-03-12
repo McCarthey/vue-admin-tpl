@@ -1,4 +1,5 @@
 <template>
+<!-- 登录页 -->
   <div class="bg">
     <div class="login-wrapper">
       <h3>管理系统登录</h3>
@@ -27,6 +28,7 @@
 import { API_LOGIN } from '@/mock/api.js'
 //设置token
 import { setToken } from '@/utils/token.js'
+import { fetchData } from '@/utils/fetch.js'
 
 export default {
   name:'login',
