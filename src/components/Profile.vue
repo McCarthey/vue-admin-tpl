@@ -30,7 +30,7 @@
       }
     },
     methods:{
-      logout(){
+      logout(){ 
         this.$ajax({
           url:'/api/logout',
           method:'post',
