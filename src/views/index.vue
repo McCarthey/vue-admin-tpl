@@ -10,16 +10,16 @@
           <div></div>
         </div>
         <!-- 侧边导航 -->
-        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+        <el-menu default-active="UserList" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :router="true">
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span slot="title">导航一</span>
             </template>
             <el-menu-item-group>
-              <span slot="title">分组一</span>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
+              <span slot="title">用户管理</span>
+              <el-menu-item index="UserList">用户列表</el-menu-item>
+              <el-menu-item index="AdminList">管理员管理</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="分组2">
               <el-menu-item index="1-3">选项3</el-menu-item>
@@ -51,7 +51,9 @@
             <Profile></Profile>
           </section>
         </el-header>
-        <el-main>Main</el-main>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>

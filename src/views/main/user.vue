@@ -22,7 +22,7 @@
         label="姓名"
         prop="name"
         width="180">
-      <el-table-column>
+      </el-table-column>
       <el-table-column
         label="内容"
         prop="content"
@@ -38,6 +38,14 @@ export default {
   data(){
     return {
 
+    }
+  },
+  created(){
+
+  },
+  methods:{
+    getUsers(){
+      
     }
   }
 }

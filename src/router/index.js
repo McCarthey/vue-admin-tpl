@@ -3,25 +3,41 @@ import Router from 'vue-router'
 //views
 const Index = resolve => require(['@/views/index'], resolve);
 const Login = resolve => require(['@/views/login'], resolve);
-// const Example = resolve => require(['@/views/example'], resolve);
-// const Process = resolve => require(['@/views/process'], resolve);
-// const Advantage = resolve => require(['@/views/advantage'], resolve);
-// const Contact = resolve => require(['@/views/contact'], resolve);
+const UserList = resolve => require(['@/views/main/user'], resolve);
+const AdminList = resolve => require(['@/views/main/admin'], resolve);
+
 // //404
-// const Page404 = resolve => require(['@/views/404'], resolve);
+const Page404 = resolve => require(['@/views/404'], resolve);
 Vue.use(Router)
 
 export default new Router({
   mode:'history',
   routes: [
     {
-      path: '/',
+      path: '/Login',
       name: 'Login',
       component: Login
     }, {
-      path: '/Index',
+      path: '/',
       name: 'Index',
-      component: Index
+      component: Index,
+      children: [{
+        path: 'UserList',
+        name: 'UserList',
+        component: UserList
+      }, {
+        path: 'AdminList',
+        name: 'AdminList',
+        component: AdminList
+      }]
+    }, {
+      path: '/404',
+      name: 'Page404',
+      component: Page404
+    }, {
+      path: '*',
+      redirect: '/404',
+      component: Page404
     }
   ]
 })
