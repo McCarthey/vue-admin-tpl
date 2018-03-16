@@ -15,5 +15,17 @@ const API_LOGOUT = Mock.mock('/api/logout', 'post', {
   code: 200
 })
 
+//用户列表
+const USER_LIST = Mock.mock('/api/userList', 'get', {
+  msg: 'success',
+  code: 200,
+  data: {
+    'list|1-10': [{
+      'name': Random.cname(),
+      
+    }]
+  }
+})
+
 
 export { API_LOGIN }

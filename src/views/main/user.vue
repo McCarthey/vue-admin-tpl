@@ -1,6 +1,7 @@
 <template>
 <!-- 用户列表 -->
   <div>
+    <h3>用户列表</h3>
     <el-table
       ref="userTable"
       :data="userList"
@@ -37,7 +38,8 @@ export default {
   name:'user',
   data(){
     return {
-
+      userList:[],
+      multipleSelection:''
     }
   },
   created(){
@@ -46,6 +48,9 @@ export default {
   methods:{
     getUsers(){
       
+    },
+    handleSelectionChange(val) {
+      this.multipleSelection = val;
     }
   }
 }

@@ -10,7 +10,7 @@
           <div></div>
         </div>
         <!-- 侧边导航 -->
-        <el-menu default-active="UserList" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :router="true">
+        <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :router="true">
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>

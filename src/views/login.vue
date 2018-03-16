@@ -28,7 +28,6 @@
 import { API_LOGIN } from '@/mock/api.js'
 //设置token
 import { setToken } from '@/utils/token.js'
-import { fetchData } from '@/utils/fetch.js'
 
 export default {
   name:'login',
