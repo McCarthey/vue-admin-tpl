@@ -1,7 +1,7 @@
 # vue-admin-tpl
 
-> A Vue.js project
-
+> 基于vue+elementUI的后台管理系统模板，包括登录、数据的增删改查等常用功能，开箱即用
+> 使用mock.js模拟请求，根据需求改成自己的接口地址即可
 ## Build Setup
 
 ``` bash
