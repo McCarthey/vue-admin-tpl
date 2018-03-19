@@ -6,7 +6,8 @@
       ref="userTable"
       :data="userList"
       style="width: 100%"
-      @selection-change="handleSelectionChange">
+      @selection-change="handleSelectionChange"
+      v-loading="loading">
       <el-table-column
         type="selection"
         width="60">
@@ -27,14 +28,28 @@
       <el-table-column
         label="地址"
         prop="address"
-        show-overflow-tooltip>
+        width="300">
       </el-table-column>
       <el-table-column
         label="链接"
         prop="webUrl"
         show-overflow-tooltip>
       </el-table-column>
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-button
+            size="mini" type="text"
+            @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+        </template>
+      </el-table-column>
     </el-table>
+
+    <div style="margin-top: 20px">
+      <el-button @click="toggleSelection()" plain>取消选择</el-button>
+      <el-button type="danger" @click="deleteSelection()" plain>删除</el-button>
+    </div>
+    
+    
   </div>
 </template>
 
@@ -44,11 +59,15 @@ export default {
   data(){
     return {
       userList:[],
-      multipleSelection:''
+      multipleSelection:'',
+      loading:true,
     }
   },
   created(){
-    this.getUsers();
+    //认为加入延时模拟请求时间
+    setTimeout(() => {
+      this.getUsers();
+    }, 1000);
   },
   methods:{
     getUsers(){
@@ -61,21 +80,30 @@ export default {
         console.log(res); 
         let { code,msg,list } = res.data;
         this.userList = list;
-        // let {code,msg,token} = res.data;
-        // if (code === 200) {
-        //   this.$message({type:'success',message:'登录成功'})
-        //   setToken(token)
-        //   this.$router.push({name:'Index'})
-        // }
+        this.loading = false;
       })
+    },
+    handleEdit(index, row) {
+      //编辑
+      console.log(index, row);
     },
     handleSelectionChange(val) {
       //勾选
       this.multipleSelection = val;
     },
-    deleteUsers(list){
+    toggleSelection(rows){
+      //切换选择
+      if (rows) {
+        rows.forEach(row => {
+          this.$refs.userTable.toggleRowSelection(row);
+        });
+      } else {
+        this.$refs.userTable.clearSelection();
+      }
+    },
+    deleteSelection(list){
       //删除所选数组
-
+      
     }
   }
 }
