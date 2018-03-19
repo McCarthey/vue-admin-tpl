@@ -19,12 +19,12 @@ const API_LOGOUT = Mock.mock('/api/logout', 'post', {
 const USER_LIST = Mock.mock('/api/userList', 'get', {
   msg: 'success',
   code: 200,
-  data: {
-    'list|1-10': [{
-      'name': Random.cname(),
-      
-    }]
-  }
+  'list|1-10': [{
+    'name': Random.cname(),
+    'date': Random.date(),
+    'address': Random.province(),
+    'webUrl': Random.url()
+  }]
 })
 
 
