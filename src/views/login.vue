@@ -77,7 +77,6 @@ export default {
     right: 20vw;
     background-color: #fff;
     width: 400px;
-    height: 240px;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0px 2px 12px #666;

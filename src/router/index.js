@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 //views
-const Index = resolve => require(['@/views/index'], resolve);
-const Login = resolve => require(['@/views/login'], resolve);
-const UserList = resolve => require(['@/views/main/user'], resolve);
-const AdminList = resolve => require(['@/views/main/admin'], resolve);
+const Index = resolve => require(['@/views/Index'], resolve);
+const Login = resolve => require(['@/views/Login'], resolve);
+const UserList = resolve => require(['@/views/main/User'], resolve);
+const UserEdit = resolve => require(['@/views/edit/UserEdit'], resolve);
+const AdminList = resolve => require(['@/views/main/Admin'], resolve);
 
 // //404
 const Page404 = resolve => require(['@/views/404'], resolve);
