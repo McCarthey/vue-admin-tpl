@@ -23,13 +23,17 @@ export default new Router({
       name: 'Index',
       component: Index,
       children: [{
-        path: 'UserList',
+        path: '/UserList',
         name: 'UserList',
         component: UserList
       }, {
-        path: 'AdminList',
+        path: '/AdminList',
         name: 'AdminList',
         component: AdminList
+      }, {
+        path: '/UserEdit/:id',
+        name: 'UserEdit',
+        component: UserEdit
       }]
     }, {
       path: '/404',

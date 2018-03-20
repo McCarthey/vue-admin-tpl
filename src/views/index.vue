@@ -18,8 +18,8 @@
             </template>
             <el-menu-item-group>
               <span slot="title">用户管理</span>
-              <el-menu-item index="UserList">用户列表</el-menu-item>
-              <el-menu-item index="AdminList">管理员管理</el-menu-item>
+              <el-menu-item index="/UserList">用户列表</el-menu-item>
+              <el-menu-item index="/AdminList">管理员列表</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="分组2">
               <el-menu-item index="1-3">选项3</el-menu-item>

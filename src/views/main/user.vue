@@ -12,6 +12,11 @@
         type="selection"
         width="60">
       </el-table-column>
+      <el-table-column
+        label="ID"
+        prop="id"
+        width="120">
+      </el-table-column>
       <el-table-column 
         label="日期"
         width="180">
@@ -64,10 +69,7 @@ export default {
     }
   },
   created(){
-    //认为加入延时模拟请求时间
-    setTimeout(() => {
-      this.getUsers();
-    }, 1000);
+    this.getUsers();
   },
   methods:{
     getUsers(){
@@ -86,6 +88,7 @@ export default {
     handleEdit(index, row) {
       //编辑
       console.log(index, row);
+      this.$router.push({name:'UserEdit',params:{id:row.id}})
     },
     handleSelectionChange(val) {
       //勾选
