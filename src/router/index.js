@@ -6,6 +6,7 @@ const Login = resolve => require(['@/views/Login'], resolve);
 const UserList = resolve => require(['@/views/main/User'], resolve);
 const UserEdit = resolve => require(['@/views/edit/UserEdit'], resolve);
 const AdminList = resolve => require(['@/views/main/Admin'], resolve);
+const AdminEdit = resolve => require(['@/views/edit/AdminEdit'], resolve);
 
 // //404
 const Page404 = resolve => require(['@/views/404'], resolve);
@@ -34,6 +35,10 @@ export default new Router({
         path: '/UserEdit/:id',
         name: 'UserEdit',
         component: UserEdit
+      }, {
+        path: '/AdminEdit/:id',
+        name: 'AdminEdit',
+        component: AdminEdit
       }]
     }, {
       path: '/404',
