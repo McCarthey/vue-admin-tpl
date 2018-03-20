@@ -7,6 +7,8 @@ const UserList = resolve => require(['@/views/main/User'], resolve);
 const UserEdit = resolve => require(['@/views/edit/UserEdit'], resolve);
 const AdminList = resolve => require(['@/views/main/Admin'], resolve);
 const AdminEdit = resolve => require(['@/views/edit/AdminEdit'], resolve);
+const RoleList = resolve => require(['@/views/main/Role'], resolve);
+const RoleEdit = resolve => require(['@/views/edit/RoleEdit'], resolve);
 
 // //404
 const Page404 = resolve => require(['@/views/404'], resolve);
@@ -32,6 +34,10 @@ export default new Router({
         name: 'AdminList',
         component: AdminList
       }, {
+        path: '/RoleList',
+        name: 'RoleList',
+        component: RoleList
+      }, {
         path: '/UserEdit/:id',
         name: 'UserEdit',
         component: UserEdit
@@ -39,6 +45,10 @@ export default new Router({
         path: '/AdminEdit/:id',
         name: 'AdminEdit',
         component: AdminEdit
+      }, {
+        path: '/RoleEdit/:id',
+        name: 'RoleEdit',
+        component: RoleEdit
       }]
     }, {
       path: '/404',

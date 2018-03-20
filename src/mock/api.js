@@ -51,5 +51,24 @@ const ADMIN_LIST = Mock.mock('/api/adminList', 'get', {
   }]
 })
 
+//角色列表
+const ROLE_LIST = Mock.mock('/api/roleList', 'get', {
+  msg: 'success',
+  code: 200,
+  'list': [{
+    'id':3,
+    'name':'用户管理员',
+    'desc':'一些描述'
+  }, {
+    'id': 2,
+    'name': '系统管理员',
+    'desc': '一些描述'
+  }, {
+    'id': 1,
+    'name': '超级管理员',
+    'desc': '一些描述'
+  }]
+})
+
 
 export { API_LOGIN }
