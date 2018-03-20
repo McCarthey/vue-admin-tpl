@@ -88,7 +88,7 @@ export default {
     handleEdit(index, row) {
       //编辑
       console.log(index, row);
-      this.$router.push({name:'UserEdit',params:{id:row.id}})
+      this.$router.push({name:'UserEdit',params:{id:row.id,mode:'edit'}})
     },
     handleSelectionChange(val) {
       //勾选

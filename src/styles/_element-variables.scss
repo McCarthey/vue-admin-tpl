@@ -12,3 +12,8 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
     line-height: 60px;
     border-bottom: 1px solid $grey;
   }
+
+  //表单输入框最大长度
+  .el-form-item__content {
+    max-width: 400px;
+  }
