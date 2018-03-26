@@ -17,6 +17,10 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
+> 打包后可以cd到server目录，执行
+```
+node server.js
+```
+来测试打包好的静态文件，无误后可上传至服务器
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
