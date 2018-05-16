@@ -11,11 +11,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/mock/api': {//这里是我配置的名字 mock的api代理路径
-        target: 'http://mockjs/api', //代理路径 
-        changeOrigin: true, //开启代理
-        pathRewrite: { '^/api': '' }  
-      },
       '/api': {//这里是我配置的名字 express的代理路径
         target: 'http://localhost:3002', //代理路径 
         changeOrigin: true, //开启代理
