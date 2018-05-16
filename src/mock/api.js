@@ -1,4 +1,4 @@
-const Mock = require('mockjs');
+// const Mock = require('mockjs');
 
 const Random = Mock.Random;
 //模拟ajax请求时间

@@ -17,7 +17,6 @@
 
 <script>
   //mockjs登出接口
-  import { API_LOGOUT } from '@/mock/api.js'
   import { getToken } from '@/utils/token.js'
   import Avatar from '@/components/Avatar'
   export default {
