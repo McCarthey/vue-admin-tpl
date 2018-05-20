@@ -1,10 +1,10 @@
 <template>
-<!-- 管理员列表,也可以不用,即可对User.vue组件改造,传不同的参数,视实际情况而定 -->
+<!-- 角色列表 -->
   <div>
-    <h3>管理员列表</h3>
+    <h3>角色列表</h3>
     <el-table
-      ref="userTable"
-      :data="adminList"
+      ref="roleTable"
+      :data="roleList"
       style="width: 100%"
       @selection-change="handleSelectionChange"
       v-loading="loading">
@@ -17,23 +17,15 @@
         prop="id"
         width="120">
       </el-table-column>
-      <el-table-column 
-        label="日期"
-        width="180">
-        <template slot-scope="scope">
-          <i class="el-icon-time"></i>
-          <span style="margin-left: 10px;">{{ scope.row.date }}</span>
-        </template>
-      </el-table-column>
       <el-table-column
-        label="姓名"
+        label="角色名"
         prop="name"
         width="180">
       </el-table-column>
       <el-table-column
-        label="角色"
-        prop="role"
-        width="180">
+        label="描述"
+        prop="desc"
+        show-overflow-tooltip>
       </el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
@@ -58,7 +50,7 @@ export default {
   name:'user',
   data(){
     return {
-      adminList:[],
+      roleList:[],
       multipleSelection:'',
       loading:true,
     }
@@ -68,22 +60,22 @@ export default {
   },
   methods:{
     getAdmins(){
-      //获取管理员列表
+      //获取角色列表
       this.$ajax({
-        url:'/api/adminList',
+        url:'/api/roleList',
         method:'get',
       })
       .then(res=>{
         console.log(res); 
         let { code,msg,list } = res.data;
-        this.adminList = list;
+        this.roleList = list;
         this.loading = false;
       })
     },
     handleEdit(index, row) {
       //编辑
       console.log(index, row);
-      this.$router.push({name:'AdminEdit',params:{id:row.id,mode:'edit'}})
+      this.$router.push({name:'RoleEdit',params:{id:row.id,mode:'edit'}})
     },
     handleSelectionChange(val) {
       //勾选
@@ -93,10 +85,10 @@ export default {
       //切换选择
       if (rows) {
         rows.forEach(row => {
-          this.$refs.userTable.toggleRowSelection(row);
+          this.$refs.roleTable.toggleRowSelection(row);
         });
       } else {
-        this.$refs.userTable.clearSelection();
+        this.$refs.roleTable.clearSelection();
       }
     },
     deleteSelection(list){

@@ -11,8 +11,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {//这里是我配置的名字 
-        target: 'http://mockjs/api', //代理路径 
+      '/api': {//这里是我配置的名字 express的代理路径
+        target: 'http://localhost:3002', //代理路径 
         changeOrigin: true, //开启代理
         pathRewrite: { '^/api': '' }  
       }
@@ -32,7 +32,14 @@ module.exports = {
      */
 
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
+    /* 
+      这是在打包文件时最快的生成source map的方法，生成的Source Map 会和打包后的JavaScript文件同行显示，没有列映射，
+      使用eval打包源文件模块，在同一个文件中生成干净的完整的source map。
+      这个选项可以在不影响构建速度的前提下生成完整的sourcemap，但是对打包后输出的JS文件的执行具有性能和安全的隐患。
+      在开发阶段这是一个非常好的选项，在生产阶段则一定不要启用这个选项。
+      对于中/小项目来说，可以设置为 eval-source-map ， 方便调试，但会减慢打包速度
+    */
+    devtool: 'cheap-module-eval-source-map',          
 
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help

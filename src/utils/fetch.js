@@ -20,4 +20,4 @@ function fetchData(url,methods,data) {
   }
 }
 
-export { fetchData}
+export { fetchData }

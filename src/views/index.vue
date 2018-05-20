@@ -4,7 +4,7 @@
     <el-container>
       <el-aside width="auto">
         <!-- 展开/收起按钮 -->
-        <div class="ani-icon" :class="aniIcon" @click="toggleCollapse">
+        <div class="ani-navbar" :class="aniNavbar" @click="toggleCollapse">
           <div></div>
           <div></div>
           <div></div>
@@ -18,8 +18,9 @@
             </template>
             <el-menu-item-group>
               <span slot="title">用户管理</span>
-              <el-menu-item index="UserList">用户列表</el-menu-item>
-              <el-menu-item index="AdminList">管理员管理</el-menu-item>
+              <el-menu-item index="/UserList">用户列表</el-menu-item>
+              <el-menu-item index="/AdminList">管理员列表</el-menu-item>
+              <el-menu-item index="/RoleList">角色列表</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="分组2">
               <el-menu-item index="1-3">选项3</el-menu-item>
@@ -74,7 +75,7 @@
     data() {
       return {
         isCollapse: false,
-        aniIcon:'ani-icon-white',
+        aniNavbar:'ani-navbar-white',
         collapseText:'toggle',
       };
     },
@@ -82,12 +83,12 @@
       toggleCollapse(){
         this.isCollapse = !this.isCollapse;
         //过渡动画
-        switch (this.aniIcon) {
-          case 'ani-icon-white':
-            this.aniIcon = 'ani-icon-blue';
+        switch (this.aniNavbar) {
+          case 'ani-navbar-white':
+            this.aniNavbar = 'ani-navbar-blue';
             break;
-          case 'ani-icon-blue':
-            this.aniIcon = 'ani-icon-white';
+          case 'ani-navbar-blue':
+            this.aniNavbar = 'ani-navbar-white';
             break;
           default:
             break;
