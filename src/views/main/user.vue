@@ -76,7 +76,7 @@ export default {
       //获取用户列表
       this.$ajax({
         url:'/api/userList',
-        method:'get',
+        method:'post',
       })
       .then(res=>{
         console.log(res); 
